@@ -21,8 +21,7 @@ def cropSelection(image):
         pdb.gimp_displays_flush()
         layer = pdb.gimp_image_merge_visible_layers(image, CLIP_TO_IMAGE)
         pdb.gimp_file_save(image, layer, image.filename, image.filename)
-        display=gimp._id2display(image.ID)
-        pdb.gimp_display_delete(display)
+        image.clean_all()
 
 
 ### Registration
